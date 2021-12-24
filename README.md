@@ -1,7 +1,9 @@
 # attention-set
 # 各种注意力机制的实现
 
-## 1. GAM 注意力
+## 即插即用型注意力
+
+### 1. GAM 注意力
 
 论文地址：https://arxiv.org/pdf/2112.05561v1.pdf
 
