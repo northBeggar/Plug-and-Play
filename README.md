@@ -1,7 +1,5 @@
 # attention-set
-# 各种注意力机制的实现
-
-## 即插即用型注意力
+# 各种即插即用模块的实现
 
 ### 1. GAM 注意力
 
@@ -11,5 +9,18 @@
 
 ![GAM](img/GAM.jpg)
 
-文章解读：https://mp.weixin.qq.com/s/VL6rXjyUDmHToYTqM32hUg
+### 2、STN模块
 
+论文地址：https://proceedings.neurips.cc/paper/2015/file/33ceb07bf4eeb3da587e268d663aba1a-Paper.pdf
+
+摘要：卷积神经网络定义了一类非常强大的模型，但仍受限于缺乏以计算和参数效率的方式对输入数据进行空间不变的能力。在这项工作中，我们引入了一个新的可学习模块--空间变换器，它明确地允许在网络中对数据进行空间操作。这个可区分的模块可以插入到现有的卷积结构中，使神经网络具有主动对特征图进行空间转换的能力，以特征图本身为条件，不需要任何额外的训练监督或对优化过程的修改。我们表明，使用空间变换器的结果是，模型学会了对平移、缩放、旋转和更通用的扭曲的不变性，从而在一些基准和一些变换类别上获得了最先进的性能。
+
+
+
+![GAM](img/STN.png)
+
+源码：
+
+[torch](./STN/)  参考：[AlexHex7](https://github.com/AlexHex7)/**[Spatial-Transformer-Networks_pytorch](https://github.com/AlexHex7/Spatial-Transformer-Networks_pytorch)**
+
+[tensorflow](./STN/tensorflow/) 参考：[kevinzakka](https://github.com/kevinzakka)/**[spatial-transformer-network](https://github.com/kevinzakka/spatial-transformer-network)**
