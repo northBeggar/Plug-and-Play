@@ -9,6 +9,8 @@
 
 ![GAM](img/GAM.jpg)
 
+
+
 ### 2、STN模块
 
 论文地址：https://proceedings.neurips.cc/paper/2015/file/33ceb07bf4eeb3da587e268d663aba1a-Paper.pdf
@@ -19,11 +21,14 @@
 
 ![GAM](img/STN.png)
 
+
 源码：
 
-[torch](./STN/pytorch)  参考：[AlexHex7](https://github.com/AlexHex7)/**[Spatial-Transformer-Networks_pytorch]**
+[torch](./1-STN/pytorch)  参考：[AlexHex7/**[Spatial-Transformer-Networks_pytorch]**](https://github.com/AlexHex7)
 
-[tensorflow](./STN/tensorflow/) 参考：[kevinzakka](https://github.com/kevinzakka)/**[spatial-transformer-network]**
+[tensorflow](./1-STN/tensorflow/) 参考：[kevinzakka/**[spatial-transformer-network]**](https://github.com/kevinzakka)
+
+
 
 ### 3、SE模块
 
@@ -37,6 +42,35 @@
 
 源码：
 
-[torch](./SENet/pytorch)  参考：[miraclewkf](https://github.com/miraclewkf)/**[SENet-PyTorch]**
+[torch](./2-SENet/pytorch)  参考：[miraclewkf/**[SENet-PyTorch]**](https://github.com/miraclewkf)
 
-[tensorflow](./SENet/tensorflow/) 参考：[taki0112](https://github.com/taki0112)/**[SENet-Tensorflow]**
+[tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/**[SENet-Tensorflow]**](https://github.com/taki0112)
+
+
+
+### 4、ODConv动态卷积
+
+论文地址：https://openreview.net/pdf?id=DmpCfq6Mg39
+
+摘要：在每个卷积层中学习单个静态卷积核是现代卷积神经网络 (CNN) 的常见训练范式。相反，最近对动态卷积的研究表明，学习 n 个卷积核的线性组合，该卷积核加权与其输入相关的注意力可以显着提高轻量级 CNN 的准确性，同时保持有效的推理。然而，我们观察到现有的工作通过内核空间的一维（关于卷积核数）赋予卷积核动态属性，但其他三个维度（关于空间大小、输入通道数和输出通道数）每个卷积核）都被忽略了。受此启发，我们提出了全维动态卷积（ODConv），一种更通用但更优雅的动态卷积设计，以推进这一研究方向。ODConv 利用一种新颖的多维注意力机制和并行策略，在任何卷积层沿内核空间的所有四个维度学习卷积内核的互补注意力。作为常规卷积的直接替代品，ODConv 可以插入到许多 CNN 架构中。在 ImageNet 和 MS-COCO 数据集上的大量实验表明，ODConv 为各种流行的 CNN 主干网（包括轻量级和大型主干网）带来了可靠的准确度提升，例如，3.77%~5.71%|1.86%~3.72% 的绝对 top-1 改进MobivleNetV2|ImageNet 数据集上的 ResNet 系列。有趣的是，由于其改进的特征学习能力，即使只有一个内核的 ODConv 也可以与现有的具有多个内核的动态卷积对应物竞争或优于现有的动态卷积对应物，从而大大减少了额外的参数。此外，ODConv 在调制输出特征或卷积权重方面也优于其他注意模块。代码和模型将在https://github.com/OSVAI/ODConv。
+
+
+
+![GAM](img/ODConv.png)
+
+源码： [torch](https://github.com/OSVAI/ODConv)  参考：[OSVAI/**[ODConv]**](https://github.com/OSVAI/ODConv)
+
+
+
+### 5、FAN注意力
+
+论文地址：https://arxiv.org/abs/2204.12451
+
+摘要：最近的研究表明，视觉变换器(ViTs)表现出强大的鲁棒性对各种腐败。虽然这种特性在一定程度上归因于自我注意机制，但仍缺乏系统的认识。本文研究了自我注意在鲁棒表征学习中的作用。我们的研究是由视觉变换器中新兴的视觉分组的有趣特性所激发的，这表明自我注意可以通过改进中层表征来促进健壮性。我们进一步提出了一系列完全注意网络(FAN) ，它们通过结合注意通道处理设计来加强这种能力。我们在不同的层次主干上全面验证了设计。我们的模型在 ImageNet-1k 和 ImageNet-C 上实现了最先进的87.1% 的准确率和35.8% 的 mCE，参数为76.8 M。我们还展示了最先进的准确性和鲁棒性在两个下游任务: 语义分割和目标检测。
+
+
+
+![GAM](img/FAN.png)
+
+源码：  [torch](./4-FAN)  参考：[NVlabs/**[FAN]**](https://github.com/NVlabs/FAN)
+
