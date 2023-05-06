@@ -1,3 +1,6 @@
+
+
+
 # attention-set
 # 各种即插即用模块的实现
 
@@ -16,6 +19,11 @@
   - IF查与投（提供SCI期刊影响因子查询）
   - SCI期刊导航（提供SCI期刊检索以及分区、是否预警等信息）
   - 中科院分区导航（提供最新SCI期刊中科院分区信息）
+
+
+
+[TOC]
+
 
 ### 0. GAM 注意力
 
@@ -38,11 +46,9 @@
 ![STN](img/1-STN.png)
 
 
-源码：
+源码：[torch](./1-STN/pytorch)  参考：[AlexHex7/Spatial-Transformer-Networks_pytorch](https://github.com/AlexHex7)
 
-[torch](./1-STN/pytorch)  参考：[AlexHex7/**[Spatial-Transformer-Networks_pytorch]**](https://github.com/AlexHex7)
-
-[tensorflow](./1-STN/tensorflow/) 参考：[kevinzakka/**[spatial-transformer-network]**](https://github.com/kevinzakka)
+源码：[tensorflow](./1-STN/tensorflow/) 参考：[kevinzakka/spatial-transformer-network](https://github.com/kevinzakka)
 
 
 
@@ -56,11 +62,9 @@
 
 ![SE](img/2-SE.png)
 
-源码：
+源码：[torch](./2-SENet/pytorch)  参考：[miraclewkf/SENet-PyTorch](https://github.com/miraclewkf)
 
-[torch](./2-SENet/pytorch)  参考：[miraclewkf/SENet-PyTorch](https://github.com/miraclewkf)
-
-[tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/SENet-Tensorflow](https://github.com/taki0112)
+源码： [tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/SENet-Tensorflow](https://github.com/taki0112)
 
 
 
@@ -74,11 +78,11 @@
 
 ![ODConv](img/3-ODConv.png)
 
-源码： [torch](./3-ODConv)  参考：[OSVAI/**[ODConv]**](https://github.com/OSVAI/ODConv)
+源码： [torch](./3-ODConv)  参考：[OSVAI/ODConv](https://github.com/OSVAI/ODConv)
 
 
 
-### 4、FAN注意力
+### 4、完全注意力 [FAN注意力]
 
 论文地址：https://arxiv.org/abs/2204.12451
 
@@ -88,7 +92,7 @@
 
 ![FAN](img/4-FAN.png)
 
-源码：  [torch](./4-FAN)  参考：[NVlabs/**[FAN]**](https://github.com/NVlabs/FAN)
+源码：  [torch](./4-FAN)  参考：[NVlabs/FAN](https://github.com/NVlabs/FAN)
 
 ### 5、CA注意力
 
@@ -99,10 +103,9 @@
 
 ![CA](img/5-CA.png)
 
-源码： 
-[torch](./5-CA/torch)  参考：[houqb/**[CoordAttention]**](https://github.com/Andrew-Qibin/CoordAttention)
+源码： [torch](./5-CA/torch)  参考：[houqb/CoordAttention](https://github.com/Andrew-Qibin/CoordAttention)
 
-[tensorflow](./5-CA/tensorflow) 参考：[Zhengtq/**[CoordAttention_tensorflow]**](https://github.com/Zhengtq/CoordAttention_tensorflow)
+源码： [tensorflow](./5-CA/tensorflow) 参考：[Zhengtq/CoordAttention_tensorflow](https://github.com/Zhengtq/CoordAttention_tensorflow)
 
 ### 6、自适应空间特征融合(ASFF)
 
@@ -132,8 +135,22 @@
 源码：  [torch](./7-CFNet)  参考：[zhanggang001/CFNet](https://github.com/zhanggang001/CFNet)  (仅有地址，尚未提供源码。若道友看到仓库更新还请公众号联系我们，及时更新。手动笔芯~~)
 
 
+### 8、无参数注意力机制（simAM）
 
-### 8、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)
+
+论文地址：http://proceedings.mlr.press/v139/yang21o/yang21o.pdf
+
+
+摘要-在本文中，我们提出了一个概念简单，但非常有效的注意模块卷积神经网络(simAM)。与现有的通道和空间注意模块相比，我们的模块在不增加原始网络参数的情况下，推导出特征映射的三维注意权重。具体来说，我们在一些著名的神经科学理论的基础上，提出优化能量函数，以找到每个神经元的重要性。我们进一步推导了能量函数的快速闭式解，并证明了该解可以在少于10行代码中实现。该模块的另一个优点是，大多数运算符都是根据已定义的能量函数的解决方案选择的，避免了过多的结构调优工作。对各种视觉任务的定量评估表明，该模块具有较强的灵活性和有效性，可以提高许多视觉任务的表示能力。
+
+
+![simAM](img/8-simAM.png)
+
+
+源码：  [torch](./8-simAM/torch)  参考：[ZjjConan/SimAM](https://github.com/ZjjConan/SimAM) 
+源码：  [tensorflow](./8-simAM/tensorflow)  参考：[cpuimage/SimAM](https://github.com/cpuimage/SimAM) 
+
+### 9、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)
 
 
 论文地址：https://arxiv.org/abs/2010.03045
@@ -141,7 +158,7 @@
 摘要-由于注意机制具有在不同通道或空间位置之间建立相互依赖关系的能力，近年来注意机制已被广泛地研究和应用于各种计算机视觉任务中。本文研究了轻量级但有效的注意机制，提出了三重注意，这是一种利用三分支结构捕捉交叉维度相互作用来计算注意权重的新方法。对于输入张量，三重态注意通过旋转运算和残差变换建立维间依赖关系，并以可忽略的计算开销对信道间和空间信息进行编码。我们的方法简单有效，可以很容易地插入到经典的骨干网络作为一个附加模块。我们证明了我们的方法在各种具有挑战性的任务中的有效性，包括在 ImageNet-1k 上的图像分类和在 MSCOCO 和 PASCAL VOC 数据集上的目标检测。此外，我们提供了广泛的洞察三联体注意的表现，通过视觉检查的 gradCAM 和 gradCAM + + 的结果。该方法的实证评估支持我们的直觉，即在计算注意力权重时，跨维度捕捉依赖性的重要性。
 
 
-![Triplet Attention](img/8-triplet.png)
+![Triplet Attention](img/9-triplet.png)
 
 
-源码：  [torch](./8-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 
+源码：  [torch](./9-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 
