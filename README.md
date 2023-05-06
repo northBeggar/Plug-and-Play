@@ -1,6 +1,3 @@
-
-
-
 # attention-set
 # 各种即插即用模块的实现
 
@@ -19,10 +16,24 @@
   - IF查与投（提供SCI期刊影响因子查询）
   - SCI期刊导航（提供SCI期刊检索以及分区、是否预警等信息）
   - 中科院分区导航（提供最新SCI期刊中科院分区信息）
+\
+\
+\
+\
+\
+\- [attention-set目录](#attention-set)
+- [各种即插即用模块的实现](#各种即插即用模块的实现)
+    - [0. GAM 注意力](#0-gam-注意力)
+    - [1、STN模块](#1stn模块)
+    - [2、SE模块](#2se模块)
+    - [3、ODConv动态卷积](#3odconv动态卷积)
+    - [4、完全注意力 \[FAN注意力\]](#4完全注意力-fan注意力)
+    - [5、CA注意力](#5ca注意力)
+    - [6、自适应空间特征融合(ASFF)](#6自适应空间特征融合asff)
+    - [7、全新多尺度融合(CFNet  2023年)](#7全新多尺度融合cfnet--2023年)
+    - [8、无参数注意力机制（simAM）](#8无参数注意力机制simam)
+    - [9、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)](#9卷积三重注意力模块rotate-to-attend-convolutional-triplet-attention-module)
 
-
-
-[TOC]
 
 
 ### 0. GAM 注意力
