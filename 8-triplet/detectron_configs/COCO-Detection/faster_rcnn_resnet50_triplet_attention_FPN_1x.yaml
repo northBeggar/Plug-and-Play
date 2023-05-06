@@ -1,0 +1,16 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "./checkpoints/triplet_attention_detectron_backbone.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  MASK_ON: False
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  BACKBONE:
+    NAME: "build_resnet_triplet_attention_fpn_backbone"
+INPUT:
+  FORMAT: "RGB"
+#SOLVER:
+  #IMS_PER_BATCH: 8
+  #BASE_LR: 0.01

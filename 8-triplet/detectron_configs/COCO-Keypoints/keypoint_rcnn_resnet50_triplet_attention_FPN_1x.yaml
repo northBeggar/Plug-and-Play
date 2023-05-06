@@ -1,0 +1,8 @@
+_BASE_: "Base-Keypoint-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "./checkpoints/triplet_attention_detectron_backbone.pkl" 
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  BACKBONE:
+    NAME: "build_resnet_triplet_attention_fpn_backbone"

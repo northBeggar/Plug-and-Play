@@ -17,17 +17,17 @@
   - SCI期刊导航（提供SCI期刊检索以及分区、是否预警等信息）
   - 中科院分区导航（提供最新SCI期刊中科院分区信息）
 
-### 1. GAM 注意力
+### 0. GAM 注意力
 
 论文地址：https://arxiv.org/pdf/2112.05561v1.pdf
 
 摘要：为了提高计算机视觉任务的性能，人们研究了各种注意力机制。然而，以往的方法忽略了保留通道和空间方面的信息以增强跨维度交互的重要性。因此，本文提出了一种通过减少信息弥散和放大全局交互表示来提高深度神经网络性能的全局注意力机制。本文引入了3D-permutation 与多层感知器的通道注意力和卷积空间注意力子模块。在CIFAR-100和ImageNet-1K上对所提出的图像分类机制的评估表明，本文的方法稳定地优于最近的几个注意力机制，包括ResNet和轻量级的MobileNet。
 
-![GAM](img/GAM.jpg)
+![GAM](img/0-GAM.jpg)
 
 
 
-### 2、STN模块
+### 1、STN模块
 
 论文地址：https://proceedings.neurips.cc/paper/2015/file/33ceb07bf4eeb3da587e268d663aba1a-Paper.pdf
 
@@ -35,7 +35,7 @@
 
 
 
-![GAM](img/STN.png)
+![STN](img/1-STN.png)
 
 
 源码：
@@ -46,7 +46,7 @@
 
 
 
-### 3、SE模块
+### 2、SE模块
 
 论文地址：https://openaccess.thecvf.com/content_cvpr_2018/papers/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.pdf
 
@@ -54,17 +54,17 @@
 
 
 
-![GAM](img/SE.png)
+![SE](img/2-SE.png)
 
 源码：
 
-[torch](./2-SENet/pytorch)  参考：[miraclewkf/**[SENet-PyTorch]**](https://github.com/miraclewkf)
+[torch](./2-SENet/pytorch)  参考：[miraclewkf/SENet-PyTorch](https://github.com/miraclewkf)
 
-[tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/**[SENet-Tensorflow]**](https://github.com/taki0112)
+[tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/SENet-Tensorflow](https://github.com/taki0112)
 
 
 
-### 4、ODConv动态卷积
+### 3、ODConv动态卷积
 
 论文地址：https://openreview.net/pdf?id=DmpCfq6Mg39
 
@@ -72,13 +72,13 @@
 
 
 
-![GAM](img/ODConv.png)
+![ODConv](img/3-ODConv.png)
 
-源码： [torch](https://github.com/OSVAI/ODConv)  参考：[OSVAI/**[ODConv]**](https://github.com/OSVAI/ODConv)
+源码： [torch](./3-ODConv)  参考：[OSVAI/**[ODConv]**](https://github.com/OSVAI/ODConv)
 
 
 
-### 5、FAN注意力
+### 4、FAN注意力
 
 论文地址：https://arxiv.org/abs/2204.12451
 
@@ -86,26 +86,25 @@
 
 
 
-![GAM](img/FAN.png)
+![FAN](img/4-FAN.png)
 
 源码：  [torch](./4-FAN)  参考：[NVlabs/**[FAN]**](https://github.com/NVlabs/FAN)
 
-### 6、CA注意力
+### 5、CA注意力
 
 论文地址：https://arxiv.org/abs/2103.02907
 
 摘要：最近关于移动网络设计的研究已经证明了信道注意力（例如，挤压和激励注意力）对于提升模型性能的显著有效性，但它们通常忽略了位置信息，这对于生成空间选择性注意力图很重要。在本文中，我们通过将位置信息嵌入到信道注意力中，提出了一种新的移动网络注意力机制，我们称之为“协调注意力”。与通过2D全局池将特征张量转换为单个特征向量的通道注意力不同，坐标注意力将通道注意力分解为两个1D特征编码过程，分别沿两个空间方向聚合特征。以这种方式，可以沿着一个空间方向捕获长距离依赖性，同时可以沿着另一个空间方位保存精确的位置信息。然后将得到的特征图分别编码成一对方向感知和位置敏感的注意力图，该注意力图可以互补地应用于输入特征图以增强感兴趣对象的表示。我们的协调注意力很简单，可以灵活地插入经典的移动网络，如MobileNetV2、MobileNeXt和EfficientNet，几乎没有计算开销。大量实验表明，我们的协调注意力不仅有利于ImageNet分类，更有趣的是，它在下游任务中表现得更好，例如对象检测和语义分割。
 
 
-![GAM](img/CA.png)
+![CA](img/5-CA.png)
 
+源码： 
+[torch](./5-CA/torch)  参考：[houqb/**[CoordAttention]**](https://github.com/Andrew-Qibin/CoordAttention)
 
-源码：  
-[torch](https://github.com/Andrew-Qibin/CoordAttention)  参考：[houqb/**[CoordAttention]**](https://github.com/Andrew-Qibin/CoordAttention)
+[tensorflow](./5-CA/tensorflow) 参考：[Zhengtq/**[CoordAttention_tensorflow]**](https://github.com/Zhengtq/CoordAttention_tensorflow)
 
-[tensorflow](https://github.com/Zhengtq/CoordAttention_tensorflow) 参考：[Zhengtq/**[CoordAttention_tensorflow]**](https://github.com/Zhengtq/CoordAttention_tensorflow)
-
-### 7、自适应空间特征融合(ASFF)
+### 6、自适应空间特征融合(ASFF)
 
 
 论文地址：https://arxiv.org/abs/1911.09516
@@ -113,14 +112,14 @@
 摘要：金字塔特征表示是解决物体检测中尺度变化问题的常用方法。然而，不同特征尺度之间的不一致性是基于特征金字塔的单镜头检测器的主要限制。在这项工作中，我们提出了一种新的数据驱动的金字塔特征融合策略，称为自适应空间特征融合（ASFF）。它学习了空间过滤冲突信息以抑制不一致性的方法，从而提高了特征的尺度不变性，并引入了几乎免费的推理开销。通过ASFF策略和YOLOv3的坚实基线，我们在MS COCO数据集上实现了最佳的速度精度权衡，在60 FPS时报告38.1%的AP，在45 FPS时报告42.4%的AP，而在29 FPS时报告43.9%的AP。
 
 
-![GAM](img/ASFF.jpg)
+![ASFF](img/6-ASFF.jpg)
 
 
-源码：  [torch](https://github.com/ruinmessi/ASFF)  参考：[GOATmessi7/**[ASFF]**](https://github.com/GOATmessi7/ASFF)
+源码：  [torch](./6-ASFF)  参考：[GOATmessi7/ASFF](https://github.com/GOATmessi7/ASFF)
 
 
 
-### 8、全新多尺度融合(CFNet  2023年)
+### 7、全新多尺度融合(CFNet  2023年)
 
 
 论文地址：https://arxiv.org/pdf/2302.06052.pdf
@@ -128,7 +127,21 @@
 摘要：多尺度特征对于密集预测任务至关重要，包括对象检测、实例分割和语义分割。现有的最先进的方法通常首先通过分类主干提取多尺度特征，然后通过轻量级模块（例如FPN中的融合模块）融合这些特征。然而，我们认为，通过这种范式融合多尺度特征可能不够，因为与重分类主干相比，为特征融合分配的参数是有限的。为了解决这个问题，我们提出了一种用于密集预测的级联融合网络（CFNet）结构。除了用于提取初始高分辨率特征的主干和几个块之外，我们还引入了几个级联阶段来在CFNet中生成多尺度特征。每个阶段包括用于特征提取的子主干和用于特征集成的极其轻量级的过渡块。这种设计使得可以用整个主干的大量参数来更深入和有效地融合特征。在对象检测、实例分割和语义分割方面的大量实验验证了所提出的CFNet的有效性。
 
 
-![GAM](img/CFNet.png)
+![CFNet](img/7-CFNet.png)
+
+源码：  [torch](./7-CFNet)  参考：[zhanggang001/CFNet](https://github.com/zhanggang001/CFNet)  (仅有地址，尚未提供源码。若道友看到仓库更新还请公众号联系我们，及时更新。手动笔芯~~)
 
 
-源码：  [torch](https://github.com/zhanggang001/CFNet)  参考：[GOATmessi7/**[ASFF]**](https://github.com/zhanggang001/CFNet)  (仅有地址，尚未提供源码)
+
+### 8、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)
+
+
+论文地址：https://arxiv.org/abs/2010.03045
+
+摘要-由于注意机制具有在不同通道或空间位置之间建立相互依赖关系的能力，近年来注意机制已被广泛地研究和应用于各种计算机视觉任务中。本文研究了轻量级但有效的注意机制，提出了三重注意，这是一种利用三分支结构捕捉交叉维度相互作用来计算注意权重的新方法。对于输入张量，三重态注意通过旋转运算和残差变换建立维间依赖关系，并以可忽略的计算开销对信道间和空间信息进行编码。我们的方法简单有效，可以很容易地插入到经典的骨干网络作为一个附加模块。我们证明了我们的方法在各种具有挑战性的任务中的有效性，包括在 ImageNet-1k 上的图像分类和在 MSCOCO 和 PASCAL VOC 数据集上的目标检测。此外，我们提供了广泛的洞察三联体注意的表现，通过视觉检查的 gradCAM 和 gradCAM + + 的结果。该方法的实证评估支持我们的直觉，即在计算注意力权重时，跨维度捕捉依赖性的重要性。
+
+
+![Triplet Attention](img/8-triplet.png)
+
+
+源码：  [torch](./8-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 

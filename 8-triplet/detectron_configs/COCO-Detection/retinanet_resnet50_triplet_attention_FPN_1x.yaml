@@ -1,0 +1,5 @@
+_BASE_: "../Base-RetinaNet.yaml"
+MODEL:
+  WEIGHTS: "checkpoints/triplet_attention_detectron_backbone.pkl" 
+  RESNETS:
+    DEPTH: 50

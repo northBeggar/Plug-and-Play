@@ -1,0 +1,27 @@
+_BASE_: "../Base-RCNN-FPN.yaml"
+MODEL:
+  #WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  WEIGHTS: "./checkpoints/triplet_attention_detectron_backbone.pkl"
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+  RESNETS:
+    DEPTH: 50
+    STRIDE_IN_1X1: False
+  BACKBONE:
+    NAME: "build_resnet_triplet_attention_fpn_backbone"
+  MASK_ON: False
+  ROI_HEADS:
+    NUM_CLASSES: 20
+INPUT:
+  FORMAT: "RGB"
+  MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+  MIN_SIZE_TEST: 800
+DATASETS:
+  TRAIN: ('voc_2007_trainval', 'voc_2012_trainval')
+  TEST: ('voc_2007_test',)
+SOLVER:
+  BASE_LR: 0.01
+  IMS_PER_BATCH: 8
+  STEPS: (12000, 16000)
+  MAX_ITER: 18000  # 17.4 epochs
+  WARMUP_ITERS: 100
