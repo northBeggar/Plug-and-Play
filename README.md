@@ -27,12 +27,13 @@
     - [1、STN模块](#1stn模块)
     - [2、SE模块](#2se模块)
     - [3、ODConv动态卷积](#3odconv动态卷积)
-    - [4、完全注意力 \[FAN注意力\]](#4完全注意力-fan注意力)
+    - [4、完全注意力 \FAN注意力\]](#4完全注意力-fan注意力)
     - [5、CA注意力](#5ca注意力)
     - [6、自适应空间特征融合(ASFF)](#6自适应空间特征融合asff)
     - [7、全新多尺度融合(CFNet  2023年)](#7全新多尺度融合cfnet--2023年)
     - [8、无参数注意力机制（simAM）](#8无参数注意力机制simam)
     - [9、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)](#9卷积三重注意力模块rotate-to-attend-convolutional-triplet-attention-module)
+    - [10、[Selective Query Recollection（SQR）](https://arxiv.org/abs/2212.07593)](#10、[Selective Query Recollection（SQR）](https://arxiv.org/abs/2212.07593))
 
 
 
@@ -57,9 +58,9 @@
 ![STN](img/1-STN.png)
 
 
-源码：[torch](./1-STN/pytorch)  参考：[AlexHex7/Spatial-Transformer-Networks_pytorch](https://github.com/AlexHex7)
+源码：[torch](./01-STN/pytorch)  参考：[AlexHex7/Spatial-Transformer-Networks_pytorch](https://github.com/AlexHex7)
 
-源码：[tensorflow](./1-STN/tensorflow/) 参考：[kevinzakka/spatial-transformer-network](https://github.com/kevinzakka)
+源码：[tensorflow](./01-STN/tensorflow/) 参考：[kevinzakka/spatial-transformer-network](https://github.com/kevinzakka)
 
 
 
@@ -73,9 +74,9 @@
 
 ![SE](img/2-SE.png)
 
-源码：[torch](./2-SENet/pytorch)  参考：[miraclewkf/SENet-PyTorch](https://github.com/miraclewkf)
+源码：[torch](./02-SENet/pytorch)  参考：[miraclewkf/SENet-PyTorch](https://github.com/miraclewkf)
 
-源码： [tensorflow](./2-SENet/tensorflow/) 参考：[taki0112/SENet-Tensorflow](https://github.com/taki0112)
+源码： [tensorflow](./02-SENet/tensorflow/) 参考：[taki0112/SENet-Tensorflow](https://github.com/taki0112)
 
 
 
@@ -89,7 +90,7 @@
 
 ![ODConv](img/3-ODConv.png)
 
-源码： [torch](./3-ODConv)  参考：[OSVAI/ODConv](https://github.com/OSVAI/ODConv)
+源码： [torch](./03-ODConv)  参考：[OSVAI/ODConv](https://github.com/OSVAI/ODConv)
 
 
 
@@ -103,7 +104,7 @@
 
 ![FAN](img/4-FAN.png)
 
-源码：  [torch](./4-FAN)  参考：[NVlabs/FAN](https://github.com/NVlabs/FAN)
+源码：  [torch](./04-FAN)  参考：[NVlabs/FAN](https://github.com/NVlabs/FAN)
 
 ### 5、CA注意力
 
@@ -114,9 +115,9 @@
 
 ![CA](img/5-CA.png)
 
-源码： [torch](./5-CA/torch)  参考：[houqb/CoordAttention](https://github.com/Andrew-Qibin/CoordAttention)
+源码： [torch](./05-CA/torch)  参考：[houqb/CoordAttention](https://github.com/Andrew-Qibin/CoordAttention)
 
-源码： [tensorflow](./5-CA/tensorflow) 参考：[Zhengtq/CoordAttention_tensorflow](https://github.com/Zhengtq/CoordAttention_tensorflow)
+源码： [tensorflow](./05-CA/tensorflow) 参考：[Zhengtq/CoordAttention_tensorflow](https://github.com/Zhengtq/CoordAttention_tensorflow)
 
 ### 6、自适应空间特征融合(ASFF)
 
@@ -129,7 +130,7 @@
 ![ASFF](img/6-ASFF.jpg)
 
 
-源码：  [torch](./6-ASFF)  参考：[GOATmessi7/ASFF](https://github.com/GOATmessi7/ASFF)
+源码：  [torch](./06-ASFF)  参考：[GOATmessi7/ASFF](https://github.com/GOATmessi7/ASFF)
 
 
 
@@ -143,7 +144,7 @@
 
 ![CFNet](img/7-CFNet.png)
 
-源码：  [torch](./7-CFNet)  参考：[zhanggang001/CFNet](https://github.com/zhanggang001/CFNet)  (仅有地址，尚未提供源码。若道友看到仓库更新还请公众号联系我们，及时更新。手动笔芯~~)
+源码：  [torch](./07-CFNet)  参考：[zhanggang001/CFNet](https://github.com/zhanggang001/CFNet)  (仅有地址，尚未提供源码。若道友看到仓库更新还请公众号联系我们，及时更新。手动笔芯~~)
 
 
 ### 8、无参数注意力机制（simAM）
@@ -157,9 +158,8 @@
 
 ![simAM](img/8-simAM.png)
 
-
-源码：  [torch](./8-simAM/torch)  参考：[ZjjConan/SimAM](https://github.com/ZjjConan/SimAM) 
-源码：  [tensorflow](./8-simAM/tensorflow)  参考：[cpuimage/SimAM](https://github.com/cpuimage/SimAM) 
+源码：  [torch](./08-simAM/torch)  参考：[ZjjConan/SimAM](https://github.com/ZjjConan/SimAM) 
+源码：  [tensorflow](./08-simAM/tensorflow)  参考：[cpuimage/SimAM](https://github.com/cpuimage/SimAM) 
 
 ### 9、卷积三重注意力模块(Rotate to Attend: Convolutional Triplet Attention Module)
 
@@ -171,7 +171,7 @@
 
 ![Triplet Attention](img/9-triplet.png)
 
-源码：  [torch](./9-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 
+源码：  [torch](./09-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 
 
 ### 10、[Selective Query Recollection（SQR）](https://arxiv.org/abs/2212.07593)
 
@@ -184,5 +184,5 @@
 ![Selective Query Recollection（SQR）](img/10-SQR.jpg)
 
 
-源码：  [torch](./10-SQR)  参考：[[Fangyi-Chen]/SQR](https://github.com/landskape-ai/triplet-attention) 
+源码：  [torch](./10-SQR)  参考：[[Fangyi-Chen]/SQR](https://github.com/Fangyi-Chen/SQR) 
 
