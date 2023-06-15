@@ -171,5 +171,18 @@
 
 ![Triplet Attention](img/9-triplet.png)
 
-
 源码：  [torch](./9-triplet)  参考：[landskape-ai/triplet-attention](https://github.com/landskape-ai/triplet-attention) 
+
+### 10、[Selective Query Recollection（SQR）](https://arxiv.org/abs/2212.07593)
+
+
+论文地址：https://arxiv.org/abs/2212.07593
+
+摘要-本文研究了基于查询的目标检测器在最后解码阶段预测错误，而在中间阶段预测正确的现象。我们回顾了训练过程，并将这种被忽视的现象归因于两个限制:缺乏训练重点和解码序列的级联错误。我们设计并提出了一种简单有效的基于查询的目标检测器训练策略——选择性查询回忆(SQR)。随着解码阶段的深入，它会累积收集中间查询，并有选择地将查询转发到顺序结构以外的下游阶段。这样，SQR将训练重点放在后期阶段，并允许后期阶段直接处理来自早期阶段的中间查询。SQR可以很容易地插入到各种基于查询的对象检测器中，并在保持推理管道不变的情况下显著提高它们的性能。因此，我们在Adamixer、DAB-DETR和deform - detr上应用SQR，跨越各种设置(主干、查询数量、调度)，并始终带来1.4-2.8的AP改进。
+
+
+![Selective Query Recollection（SQR）](img/10-SQR.jpg)
+
+
+源码：  [torch](./10-SQR)  参考：[[Fangyi-Chen]/SQR](https://github.com/landskape-ai/triplet-attention) 
+
